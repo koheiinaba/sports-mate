@@ -18,4 +18,4 @@ sports-mateは、様々なスポーツを行うクラブがメンバーを募集
 ## 設計書
 
 ### 機能一覧
-<https://docs.google.com/spreadsheets/d/1pohQYrAorrb7H6aMVDG79MVsyH3kkjbatKiFJGsFQTg/edit#gid=0>
+<https://docs.google.com/spreadsheets/d/1pohQYrAorrb7H6aMVDG79MVsyH3kkjbatKiFJGsFQTg/edit?usp=sharing>
