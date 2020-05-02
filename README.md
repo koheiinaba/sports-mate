@@ -1,24 +1,21 @@
-# README
+# sports-mate
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+sports-mateは、様々なスポーツを行うクラブがメンバーを募集することができるサイトです。
 
-Things you may want to cover:
+### サイトテーマ
+スポーツで出会い健康に
 
-* Ruby version
+### テーマを選んだ理由
+自分がスポーツ好きで引っ越した時にスポーツをしたかったが探せなかったため。
 
-* System dependencies
+### ターゲットユーザ
+スポーツが好きで主催しメンバーを募集したい方。活動に参加したい方。
 
-* Configuration
+### 主な利用シーン
+スポーツ活動をする際、スポーツしたいと思った時、メンバーを集めたい時。
 
-* Database creation
+## 設計書
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 機能一覧
+<https://docs.google.com/spreadsheets/d/1pohQYrAorrb7H6aMVDG79MVsyH3kkjbatKiFJGsFQTg/edit#gid=0>
