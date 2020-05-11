@@ -10,6 +10,44 @@
   </head>
 
   <body>
+
+
+<div class='fixed-top'>
+  <header>
+    <div class="navbar navbox navbar-fixed-top">
+      <div class="container">
+        <nav class="nav nav-c navbar-left">
+          <h3>sports-mate</h3>
+            <div class="navbar-brand"></div>
+        </nav>
+
+
+      <% if user_signed_in? %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class=""><%= link_to "sports-mate", "#",class:"glyphicon glyphicon-home home" %></li>
+            <li class=""><%= link_to 'クラブ一覧', clubs_path,class:"glyphicon glyphicon-book books" %></li>
+            <li class=""><%= link_to 'マイページ', users_path,class:"glyphicon glyphicon-user users" %></li>
+            <li class=""><%= link_to " ログアウト", destroy_user_session_path, method: :delete,class:"glyphicon glyphicon-log-out" %></li>
+          </ul>
+        </nav>
+      <% else %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li class=""><%= link_to "sports-mate", "#",class:"glyphicon glyphicon-home home" %></li>
+            <li class=""><%= link_to "クラブ一覧", clubs_path,class:"glyphicon glyphicon-link about" %></li>
+            <li class=""><%= link_to "新規登録", new_user_registration_path,class:"glyphicon glyphicon-edit sign_up" %></li>
+            <li class=""><%= link_to "ログイン", new_user_session_path,class:"glyphicon glyphicon-log-in sign-in" %></li>
+          </ul>
+        </nav>
+      <% end %>
+      </div>
+    </div>
+  </header>
+</div>
+
+
     <%= yield %>
   </body>
 </html>
