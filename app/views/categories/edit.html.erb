@@ -1,6 +1,12 @@
-<h1>Editing Category</h1>
-
-<%= render 'form', category: @category %>
-
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+<h2><strong>ジャンル編集画面</strong></h2><br>
+  <%= form_for(@category) do |f| %>
+     <div class="field row">
+     	<div class="col-xs-1">
+          <p><strong>ジャンル</strong></p>
+        </div>
+          <%= f.text_field :name, class: "col-xs-2" %>
+        <div class="col-xs-3">
+          <%= f.submit "保存", class:"btn btn-primary" %>
+        </div>
+     </div>
+  <% end %>

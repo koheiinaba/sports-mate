@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_085000) do
     t.text "introduction"
     t.string "member"
     t.string "place"
-    t.datetime "time"
+    t.string "time"
     t.string "email"
     t.string "image_id"
     t.datetime "created_at", null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_085000) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

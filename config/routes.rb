@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'clubs#index'
+  root 'categories#index'
 
   devise_for :users
   resources :users, only: [:show, :edit, :update, :index]
