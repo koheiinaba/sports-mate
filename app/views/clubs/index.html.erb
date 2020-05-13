@@ -1,31 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Clubs</h1>
-
-<table>
-  <thead>
-  </thead>
-
-  <tbody>
-    <% @clubs.each do |club| %>
+<div class="col-xs-9">
+  <h2>クラブ一覧</h2>
+  <table class="table table-hover teble-inverse">
+    <thead>
       <tr>
-        <td><%= club.category_id %></td>
-        <td><%= club.name %></td>
-        <td><%= club.introduction %></td>
-        <td><%= club.member %></td>
-        <td><%= club.place %></td>
-        <td><%= club.time %></td>
-        <td><%= club.email %></td>
-        <td><%= club.image %></td>
-        <td><%= link_to 'Show', club %></td>
-        <td><%= link_to 'Edit', edit_club_path(club) %></td>
-        <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th></th>
+        <th>クラブ名</th>
+        <th>ジャンル</th>
+        <th>活動場所</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr>
+        <% @clubs.each do |club| %>
+        <td>
+          <%= link_to user_path(club.user_id) do %>
+          <%= attachment_image_tag club, :club_image, size:'50x50', format: 'jpeg', fallback: "no_image.jpg" %>
+          <% end %>
+        </td>
+        <td><%= link_to club.name, club_path(club) %></td>
+        <td><%= club.category %></td>
+        <td><%= club.place %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<br>
 
-<%= link_to 'New Club', new_club_path %>
-<%= link_to 'category', categories_path %>
+
+<div class="row">
+  <div class="col-sm-7"></div>
+  <%= link_to "クラブ新規登録", new_club_path, class: "btn btn-primary"  %>
+</div>

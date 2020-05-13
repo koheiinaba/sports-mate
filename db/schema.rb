@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_085000) do
   end
 
   create_table "clubs", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "category_id"
     t.string "name"
     t.text "introduction"
