@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_085000) do
     t.string "place"
     t.string "time"
     t.string "email"
-    t.string "image_id"
+    t.string "club_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,10 +48,11 @@ ActiveRecord::Schema.define(version: 2020_05_10_085000) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "club_id"
     t.string "title"
     t.text "content"
-    t.string "image_id"
+    t.string "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

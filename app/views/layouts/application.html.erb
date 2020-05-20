@@ -28,7 +28,8 @@
 
             <li class=""><%= link_to "sports-mate", "#",class:"glyphicon glyphicon-home home" %></li>
             <li class=""><%= link_to 'クラブ一覧', clubs_path,class:"glyphicon glyphicon-book books" %></li>
-            <li class=""><%= link_to 'マイページ', users_path,class:"glyphicon glyphicon-user users" %></li>
+            <li class=""><%= link_to '投稿一覧', posts_path,class:"glyphicon glyphicon-user users" %></li>
+            <li class=""><%= link_to 'マイページ', user_path(current_user),class:"glyphicon glyphicon-user users" %></li>
             <li class=""><%= link_to " ログアウト", destroy_user_session_path, method: :delete,class:"glyphicon glyphicon-log-out" %></li>
           </ul>
         </nav>

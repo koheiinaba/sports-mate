@@ -9,7 +9,7 @@ class CreateClubs < ActiveRecord::Migration[5.2]
       t.string :place
       t.string :time
       t.string :email
-      t.string :image_id
+      t.string :club_image_id
 
       t.timestamps
     end

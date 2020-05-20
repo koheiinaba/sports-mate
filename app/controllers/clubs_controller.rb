@@ -4,10 +4,13 @@ class ClubsController < ApplicationController
   def index
     @club = Club.new
     @clubs = Club.all
+    @categories = Category.all
   end
 
 
   def show
+    @clubs = Club.find(params[:id])
+    @club = Club.new
   end
 
 
@@ -42,7 +45,7 @@ class ClubsController < ApplicationController
 
   private
     def club_params
-      params.require(:club).permit(:name, :introduction, :category_id, :image, :email, :member, :place, :time, :user_id)
+      params.require(:club).permit(:name, :introduction, :category_id, :image_id, :email, :member, :place, :time, :user_id)
     end
 
 end

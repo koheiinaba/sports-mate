@@ -1,3 +1,20 @@
 <h1>New Category</h1>
+<div class="row">
+	<%= form_for(@category) do |c| %>
+	<div class="col-xs-8">
+	  <div class="form-group row">
+        <label for="category_name" class="col-sm-2 col-form-label">スポーツ名</label>
+        <div class="col-sm-10">
+          <%= c.text_field :name %>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-7"></div>
+      <%= c.submit "ジャンル新規登録", class: "btn btn-primary" %>
+	</div>
+    <% end %>
+  </div>
+</div>
+
 
 <%= link_to 'Back', categories_path %>

@@ -1,4 +1,23 @@
+<div class="col-xs-9">
+  <h2>クラブ詳細</h2>
+  <table class="table table-hover teble-inverse">
+  	<tbody>
+  		<tr>
+  			<td><%= link_to clubs_path do %>
+  		  	<%= attachment_image_tag @club, :club_image, size:'50x50', format: 'jpeg', fallback: "no_image.jpg" %>
+          　 <% end %>
+             <%= link_to @clubs.name %></td>
+            <td><%= link_to @clubs.category.name %></td>
+            <td><%= link_to @clubs.introduction %></td>
+            <td><%= @clubs.member %></td>
+            <td><%= @clubs.place %></td>
+            <td><%= @clubs.time %></td>
+            <td><%= @clubs.email %></td>
 
-<p>
-  <strong>Category:</strong>
-</p>
+            <% if @clubs.user_id == current_user.id %>
+        　  <td><%= link_to "Edit", edit_club_path %></td>
+        　  <td><%= link_to "Destroy", club_path, method: :delete %>  </td>
+        　  <% end %>
+         </tr>
+     </tbody>
+  </table>

@@ -1,5 +1,26 @@
-<h1>New Post</h1>
-
-<%= render 'form', post: @post %>
-
+<h2><strong>新規投稿画面</strong></h2><br>
+<div class="row">
+	<%= form_for(@post) do |post| %>
+	<div class="col-xs-3">
+		<%= post.attachment_field :post_image %>
+	</div>
+	<div class="col-xs-8">
+	  <div class="form-group row">
+        <label for="club_name" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+          <%= post.text_field :title %>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="club_introduction" class="col-sm-2 col-form-label">投稿内容</label>
+        <div class="col-sm-10">
+          <%= post.text_area :content %>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-7"></div>
+      <%= post.submit "新規投稿", class: "btn btn-primary" %>
+	</div>
+    <% end %>
+</div>
 <%= link_to 'Back', posts_path %>
