@@ -4,7 +4,7 @@
   	<tbody>
   		<tr>
   			<td><%= link_to clubs_path do %>
-  		  	<%= attachment_image_tag @club, :club_image, size:'50x50', format: 'jpeg', fallback: "no_image.jpg" %>
+  		  	<%= attachment_image_tag @clubs, :club_image, size:'50x50', format: 'jpeg', fallback: "no_image.jpg" %>
           　 <% end %>
              <%= link_to @clubs.name %></td>
             <td><%= link_to @clubs.category.name %></td>
@@ -16,7 +16,7 @@
 
             <% if @clubs.user_id == current_user.id %>
         　  <td><%= link_to "Edit", edit_club_path %></td>
-        　  <td><%= link_to "Destroy", club_path, method: :delete %>  </td>
+        　  <td><%= link_to "Destroy", club_path, method: :delete %></td>
         　  <% end %>
          </tr>
      </tbody>

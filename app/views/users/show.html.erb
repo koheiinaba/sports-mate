@@ -55,5 +55,31 @@
         </tbody>
       </table>
     </div>
+
+　　<div class="col-xs-4">
+　　</div>
+
+    <div class="col-xs-7">
+    <h2>マイ投稿</h2>
+      <table class="table table-hover teble-inverse">
+        <thead>
+          <tr>
+            <th></th>
+            <th>投稿タイトル</th>
+            <th>投稿内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <% @clubs.each do |club| %>
+            <% club.posts.each do |post| %>
+            <td><%= link_to post.title, post_path(post.id) %></td>
+            <td><%= post.content %></td>
+          </tr>
+          <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

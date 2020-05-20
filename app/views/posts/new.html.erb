@@ -1,9 +1,15 @@
 <h2><strong>新規投稿画面</strong></h2><br>
 <div class="row">
 	<%= form_for(@post) do |post| %>
+  <div class="form-group row">
+    <label for="post_club" class="col-sm-2 col-form-label">クラブ</label>
+    <div class="col-sm-10">
+      <%= post.select :club_id, Club.all.collect{ |c| [ c.name, c.id]} %>
+    </div>
+  </div>
 	<div class="col-xs-3">
-		<%= post.attachment_field :post_image %>
-	</div>
+　　<%= post.attachment_field :post_image %>
+　</div>
 	<div class="col-xs-8">
 	  <div class="form-group row">
         <label for="club_name" class="col-sm-2 col-form-label"></label>

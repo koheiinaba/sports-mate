@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
 
   def show
+    @posts = Post.find(params[:id])
   end
 
 
@@ -16,12 +17,12 @@ class PostsController < ApplicationController
 
 
   def edit
+    @post = Post.find(params[:id])
   end
 
 
   def create
     @post = Post.new(post_params)
-    @post.club_id = current_user.id
     if @post.save
       redirect_to post_path(@post.id)
     else
@@ -31,16 +32,27 @@ class PostsController < ApplicationController
 
 
   def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    if @post.save
+      flash[:notice] = "編集しました"
+      redirect_to post_path(@post.id)
+    else
+      render("posts/edit")
+    end
   end
 
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:user_id, :club_id, :title, :content, :post_image_id)
+      params.require(:post).permit(:club_id, :title, :content, :post_image)
     end
 
 end

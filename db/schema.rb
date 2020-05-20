@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_085000) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "club_id"
     t.string "title"
     t.text "content"

@@ -1,5 +1,39 @@
 <h1>クラブ編集</h1>
 
+<h5>投稿画像</h5>
+  <%= attachment_image_tag @club, :club_image, :fill, 200, 160, fallback: "no_image.jpg", id: :img_prev, class: "img_prev" %>
 
-<%= link_to 'Show', @club %> |
-<%= link_to 'Back', clubs_path %>
+<%= form_for(@club) do |f| %>
+
+  <h5>クラブ名</h5>
+  <%= f.attachment_field :club_image %>
+  <%= f.text_field :name %>
+
+  <h5>クラブ説明</h5>
+  <%= f.text_area :introduction %>
+
+  <h5>ジャンル</h5>
+  <%= f.select :category_id, Category.all.collect{ |c| [ c.name, c.id]} %>
+
+  <h5>メールアドレス</h5>
+  <%= f.text_field :email %>
+
+  <h5>人数</h5>
+  <%= f.text_field :member %>
+
+  <h5>活動場所</h5>
+  <%= f.text_field :place %>
+
+  <h5>活動日時</h5>
+  <%= f.text_field :time %>
+
+  <br>
+  <%= f.submit 'Update Book' %>
+
+  <%= link_to "Show", club_path(@club) %>
+
+  <%= link_to "Back", clubs_path %>
+
+<% end %>
+
+

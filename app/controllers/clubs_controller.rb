@@ -20,6 +20,7 @@ class ClubsController < ApplicationController
 
 
   def edit
+    @club = Club.find(params[:id])
   end
 
 
@@ -37,15 +38,26 @@ class ClubsController < ApplicationController
 
 
   def update
+    @club = Club.find(params[:id])
+    @club.update(club_params)
+    if @club.save
+      flash[:notice] = "クラブ編集しました"
+      redirect_to club_path(@club.id)
+    else
+      render("clubs/edit")
+    end
   end
 
 
   def destroy
+    @club = Club.find(params[:id])
+    @club.destroy
+    redirect_to clubs_path
   end
 
   private
     def club_params
-      params.require(:club).permit(:name, :introduction, :category_id, :image_id, :email, :member, :place, :time, :user_id)
+      params.require(:club).permit(:name, :introduction, :category_id, :club_image, :email, :member, :place, :time, :user_id)
     end
 
 end
