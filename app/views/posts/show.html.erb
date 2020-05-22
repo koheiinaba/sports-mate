@@ -5,14 +5,23 @@
   	<tbody>
   		<tr>
   			<td><%= link_to posts_path do %>
-  		  	<%= attachment_image_tag @post, :post_image, size:'50x50', format: 'jpeg', fallback: "no_image.jpg" %>
+  		  	<%= attachment_image_tag @posts, :post_image, size:'50x50', format: 'jpeg', fallback: "no_image.jpg" %>
           　 <% end %>
              <%= link_to @posts.title %></td>
             <td><%= @posts.content %></td>
+            <td>
+              <div id="favorites_buttons_<%= @posts.id %>">
+                <%= render partial: 'favorites/favorite', locals: { post: @posts} %>
+              </div>
+            </td>
 
         　  <td><%= link_to "Edit", edit_post_path %></td>
         　  <td><%= link_to "Destroy", post_path, method: :delete %></td>
-
-         </tr>
-     </tbody>
+      </tr>
+    </tbody>
   </table>
+  <table id= "comments_area_<%= @posts.id %>" class="table table-hover teble-inverse">
+    <%= render partial: 'comments/comment_index', locals: { posts: @posts} %>
+  </table>
+  <%= render partial: 'comments/form', locals: { posts: @posts, comment: @comment} %>
+</div>

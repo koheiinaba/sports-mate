@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   root 'categories#index'
 
   devise_for :users
-  resources :users, only: [:show, :edit, :update, :index]
+  resources :users, only: [:show, :edit, :update, :index, :destroy]
 
-  resources :comments
-  resources :favorites
-  resources :posts
+  resources :posts do
+  	resource :comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+  end
   resources :categories
   resources :clubs
 

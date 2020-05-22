@@ -22,6 +22,12 @@
           <td><%= post.club.name %></td>
           <td><%= post.title %></td>
           <td><%= post.content %></td>
+          <td>
+            <div id="favorites_buttons_<%= post.id %>">
+              <%= render partial: 'favorites/favorite', locals: { post: post} %>
+            </div>
+          </td>
+           <td>コメント数 : <%= post.comments.count %></td>
           <td><%= link_to '投稿詳細コメントする', post_path(post) %></td>
           <td><%= link_to '編集', edit_post_path(post) %></td>
         </tr>

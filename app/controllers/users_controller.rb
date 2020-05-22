@@ -1,17 +1,15 @@
 class UsersController < ApplicationController
-	def new
-    end
-
-    def create
-    end
-
-    def index
-    end
 
     def show
       @users = User.all
   	  @user = current_user
   	  @clubs = @user.clubs
+    end
+
+    def destroy
+      @user = current_user
+      @user.destroy
+      redirect_to root_path
     end
 
     private
