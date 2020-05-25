@@ -11,7 +11,11 @@
           </div>
         </div>
       </div>
-    </div>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <%= link_to "ジャンルの追加", categories_path, class: "btn btn-primary"  %>
+</div>
+</div>
 
   <div class="col-xs-9">
     <h2>クラブ一覧</h2>
@@ -39,16 +43,10 @@
       <% end %>
     </tbody>
   </table>
-</div>
-
-
-
 <div class="row">
-  <div class="col-sm-7"></div>
+  <div class="col-xs-9"></div>
   <%= link_to "クラブ新規登録", new_club_path, class: "btn btn-primary"  %>
 </div>
-
-<div class="row">
-  <div class="col-sm-7"></div>
-  <%= link_to "ジャンルの追加", categories_path, class: "btn btn-primary"  %>
 </div>
+
+
