@@ -5,4 +5,9 @@ class Club < ApplicationRecord
 	belongs_to :category
 	attachment :club_image
 
+	validates :name, presence: true
+	validates :introduction, length: { maximum: 50 }
+	validates :member, presence: true
+	validates :place, presence: true
+	validates :time, presence: true
 end

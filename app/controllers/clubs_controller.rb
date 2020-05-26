@@ -1,5 +1,6 @@
 class ClubsController < ApplicationController
-
+  before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @club = Club.new
@@ -27,11 +28,10 @@ class ClubsController < ApplicationController
   def create
     @club = Club.new(club_params)
     @club.user_id = current_user.id
-    if @club.save!
+    if @club.save
      redirect_to club_path(@club.id)
      flash[:notice] = "商品を追加しました"
     else
-      @club = Club.new
       render :new
     end
   end
@@ -56,6 +56,14 @@ class ClubsController < ApplicationController
   end
 
   private
+
+    def correct_user
+      club = Club.find(params[:id])
+      if current_user != club.user
+        redirect_to clubs_path
+      end
+    end
+
     def club_params
       params.require(:club).permit(:name, :introduction, :category_id, :club_image, :email, :member, :place, :time, :user_id)
     end

@@ -1,4 +1,13 @@
+
 <h2><strong>ジャンル編集画面</strong></h2><br>
+<% if @category.errors.any? %>
+   <h3><%= @category.errors.count %>errors prohibited this obj from being saved:</h3>
+     <ul>
+       <% @category.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+       <% end %>
+     </ul>
+<% end %>
   <%= form_for(@category) do |c| %>
     <div class="field row">
      	<div class="col-xs-1">

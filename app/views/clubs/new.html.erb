@@ -1,6 +1,14 @@
 
-
 <h2><strong>クラブ 新規登録画面</strong></h2><br>
+<% if @club.errors.any? %>
+   <h3><%= @club.errors.count %>errors prohibited this obj from being saved:</h3>
+     <ul>
+       <% @club.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+       <% end %>
+     </ul>
+<% end %>
+
 <div class="row">
 	<%= form_for(@club) do |club| %>
 	<div class="col-xs-3">

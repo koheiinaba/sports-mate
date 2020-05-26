@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @post = Post.new
@@ -52,8 +53,7 @@ class PostsController < ApplicationController
 
   private
 
-    def post_params
+  def post_params
       params.require(:post).permit(:club_id, :title, :content, :post_image)
-    end
-
+  end
 end

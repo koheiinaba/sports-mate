@@ -1,4 +1,12 @@
 <h1>クラブ編集</h1>
+<% if @club.errors.any? %>
+   <h3><%= @club.errors.count %>errors prohibited this obj from being saved:</h3>
+     <ul>
+       <% @club.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+       <% end %>
+     </ul>
+<% end %>
 
 <h5>投稿画像</h5>
   <%= attachment_image_tag @club, :club_image, :fill, 200, 160, fallback: "no_image.jpg", id: :img_prev, class: "img_prev" %>
@@ -28,11 +36,11 @@
   <%= f.text_field :time %>
 
   <br>
-  <%= f.submit 'Update Book' %>
+  <%= f.submit '編集を保存する' %>
 
-  <%= link_to "Show", club_path(@club) %>
+  <%= link_to "詳細を見る", club_path(@club) %>
 
-  <%= link_to "Back", clubs_path %>
+  <%= link_to "一覧に戻る", clubs_path %>
 
 <% end %>
 

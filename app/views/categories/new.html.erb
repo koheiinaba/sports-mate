@@ -1,4 +1,13 @@
-<h1>New Category</h1>
+
+<h1>ジャンルの新規登録</h1>
+<% if @category.errors.any? %>
+   <h3><%= @category.errors.count %>errors prohibited this obj from being saved:</h3>
+     <ul>
+       <% @category.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+       <% end %>
+     </ul>
+<% end %>
 <div class="row">
 	<%= form_for(@category) do |c| %>
 	<div class="col-xs-8">

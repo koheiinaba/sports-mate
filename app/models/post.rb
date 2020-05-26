@@ -8,4 +8,7 @@ class Post < ApplicationRecord
 	belongs_to :club
 	attachment :post_image
 
+	validates :title, presence: true
+	validates :content, length: { in: 2..200 }
+
 end

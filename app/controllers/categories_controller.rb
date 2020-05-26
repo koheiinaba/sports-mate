@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
 
   def about
   end
@@ -33,6 +34,7 @@ class CategoriesController < ApplicationController
 
     if @category.save
       redirect_to categories_path(@category.id)
+      flash[:notice] = "ジャンル名を変更しました"
     else
       render("categories/edit")
     end
