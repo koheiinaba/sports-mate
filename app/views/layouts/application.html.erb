@@ -15,10 +15,9 @@
 <div class='fixed-top'>
   <header>
     <div class="navbar navbox navbar-fixed-top">
-      <div class="container">
+      <div class="container" >
         <nav class="nav nav-c navbar-left">
           <h3>sports-mate</h3>
-            <div class="navbar-brand"></div>
         </nav>
 
 
@@ -46,10 +45,18 @@
       <% end %>
       </div>
     </div>
-
-
   </header>
 
     <%= yield %>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-3 col-xs-offset-9">
+            <p class="footer-text">sports-mate</p>
+            </div>
+          </div>
+        </div>
+      </footer>
   </body>
 </html>

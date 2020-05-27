@@ -1,6 +1,6 @@
 class ClubsController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :show, :new, :update, :destroy]
 
   def index
     @club = Club.new

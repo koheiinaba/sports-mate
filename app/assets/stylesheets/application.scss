@@ -18,16 +18,14 @@
 
 
 /*application.scss適用　　ヘッダーandフッター*/
-.navbar-brand {
-	background-size: cover;
-	height: 60px;
-	width: 180px;
-}
+/*header {
+	height: 80px;
+}*/
 .nav-c {
 	margin-top: 20px;
 }
 .navbox {
-	background: url("PF2.jpg");
+	background-color: #A7F1FF;
 	background-size: cover;
 }
 .navbar {
@@ -36,12 +34,9 @@
 .navbar-nav {
 	margin-top: 50px;
 }
-.navs {
-	margin-top: 20px;
-}
 .footer {
 	width: 100%;
-	background-color: #f08080;
+	background-color: #A7F1FF;
 	bottom: 0;
 	height: 60px;
 	position: fixed;
