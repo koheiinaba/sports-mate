@@ -9,20 +9,14 @@
   </div>
 <% end %>
 
-<div class="col-xs-9">
-    <h2>投稿一覧</h2>
-    <table class="table table-hover teble-inverse">
-      <thead>
-      <tr>
-        <th></th>
-        <th>クラブ名</th>
-        <th>タイトル</th>
-        <th>投稿内容</th>
-      </tr>
-      </thead>
-      <tbody>
+<br>
+<div class="col-xs-12">
+  <h2>投稿一覧</h2>
+  <br>
+  <table class="table table-hover teble-inverse">
+    <tbody>
+        <% @posts.each do |post| %>
         <tr>
-          <% @posts.each do |post| %>
           <td>
           <%= link_to post_path(post) do %>
           <%= attachment_image_tag post, :post_image, size:'50x50', format: 'jpeg', fallback: "no_image.jpg" %>
@@ -31,6 +25,7 @@
           <td><%= post.club.name %></td>
           <td><%= post.title %></td>
           <td><%= post.content %></td>
+          <% if user_signed_in? %>
           <td>
             <div id="favorites_buttons_<%= post.id %>">
               <%= render partial: 'favorites/favorite', locals: { post: post} %>
@@ -41,16 +36,18 @@
           <% if current_user.clubs.where(id: post.club_id).exists? %>
           <td><%= link_to '編集する', edit_post_path(post) %></td>
           <% end %>
+          <% end %>
         </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
+
 
 <br>
 
 <div class="row">
   <% if user_signed_in? %>
-  <div class="col-sm-7"></div>
-  <%= link_to "新規投稿する", new_post_path, class: "btn btn-primary"  %>
+  <div class="new"></div>
+  <%= link_to "新規投稿する", new_post_path, class: "btn btn-success"  %>
   <% end %>
 </div>

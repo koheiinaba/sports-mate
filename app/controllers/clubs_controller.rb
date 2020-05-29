@@ -1,11 +1,15 @@
 class ClubsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :correct_user, only: [:edit, :show, :new, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :show, :new, :update, :destroy, :create]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @club = Club.new
-    @clubs = Club.all
     @categories = Category.all
+    if params[:category_id] == nil
+    @clubs = Club.all
+    else
+    @clubs = Club.where(id: params[:category_id])
+    end
   end
 
 
