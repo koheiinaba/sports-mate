@@ -6,7 +6,7 @@ class Club < ApplicationRecord
 	attachment :club_image
 
 	validates :name, presence: true
-	validates :introduction, length: { maximum: 50 }
+	validates :introduction, presence: true
 	validates :member, presence: true
 	validates :place, presence: true
 	validates :time, presence: true
