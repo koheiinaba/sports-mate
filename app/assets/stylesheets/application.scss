@@ -18,14 +18,18 @@
 
 
 /*application.scss適用　　ヘッダーandフッター*/
-/*header {
-	height: 80px;
-}*/
 .nav-c {
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: -4px -4px 0px #FFF, -3px -3px 0px #0FF;
 	margin-top: 20px;
+	font-family: cursive;
+	position: absolute;
+    top: 5%;
+    left: 10%;
 }
 .navbox {
-	background-color: #A7F1FF;
+	background-color: #174a5c;
 	background-size: cover;
 }
 .navbar {
@@ -34,9 +38,12 @@
 .navbar-nav {
 	margin-top: 50px;
 }
+.glyphicon{
+	color: white;
+}
 .footer {
 	width: 100%;
-	background-color: #A7F1FF;
+	background-color: #174a5c;
 	bottom: 0;
 	height: 60px;
 	position: fixed;
@@ -49,6 +56,10 @@
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    font-family: cursive;
+    font-size: 20px;
+    position: absolute;
+    left: 60%;
 }
 body {
 	margin-bottom: 60px;
