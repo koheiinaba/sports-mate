@@ -8,7 +8,7 @@ class ClubsController < ApplicationController
     if params[:category_id] == nil
     @clubs = Club.all
     else
-    @clubs = Club.where(id: params[:category_id])
+    @clubs = Club.where(category_id: params[:category_id])
     end
   end
 
