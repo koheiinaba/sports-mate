@@ -9,45 +9,39 @@
   </div>
 <% end %>
 
-<br>
+<% if user_signed_in? %>
+　<a href="/posts/new" class="btn-square-soft">新規登録する</a>
+<% end %>
+
 <div class="col-xs-12">
   <h2>投稿一覧</h2>
   <br>
-  <table class="table table-hover teble-inverse">
-    <tbody>
-        <% @posts.each do |post| %>
-        <tr>
-          <td>
-          <%= link_to post_path(post) do %>
-          <%= attachment_image_tag post, :post_image, size:'50x50', format: 'jpeg', fallback: "no_image.jpg" %>
-          <% end %>
-          </td>
-          <td><%= post.club.name %></td>
-          <td><%= post.title %></td>
-          <td><%= post.content %></td>
+    <% @posts.each do |post| %>
+      <div class="card it" style="width: 28rem;">
+        <%= link_to post_path(post) do %>
+        <%= attachment_image_tag post, :post_image, size:'260x220', format: 'jpeg', fallback: "no_image.jpg", class: "card-img-top ima" %>
+        <% end %>
+        <div class="card-body">
+          <h5><strong>
+            <%= link_to post.club.name, post_path(post), class: "card-title" %>
+          </strong></h5>
+          <p class="card-text"><strong>
+            <%= post.title %></strong></p>
+          <p class="card-text"><strong>
+            <%= post.content %></strong></p>
           <% if user_signed_in? %>
-          <td>
             <div id="favorites_buttons_<%= post.id %>">
               <%= render partial: 'favorites/favorite', locals: { post: post} %>
             </div>
-          </td>
-          <td>コメント数 : <%= post.comments.count %></td>
-          <td><%= link_to '投稿詳細コメントする', post_path(post) %></td>
+          <p class="card-text">コメント数 : <%= post.comments.count %></strong></p>
+          <%= link_to '投稿詳細コメントする', post_path(post),  class: "btn btn-primary" %>
           <% if current_user.clubs.where(id: post.club_id).exists? %>
-          <td><%= link_to '編集する', edit_post_path(post) %></td>
+          <%= link_to '編集する', edit_post_path(post),  class: "btn btn-success" %>
+          <br>
           <% end %>
           <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-
-<br>
-
-<div class="row">
-  <% if user_signed_in? %>
-  <div class="new"></div>
-  <%= link_to "新規投稿する", new_post_path, class: "btn btn-success"  %>
-  <% end %>
+        </div>
+      </div>
+    <% end %>
 </div>
+

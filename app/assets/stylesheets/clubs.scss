@@ -2,12 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.panel-category-box {
+
+.category-box {
 	padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
-    color: #6091d3;/*文字色*/
     background: #FFF;
     border: solid 3px #6091d3;/*線*/
     border-radius: 10px;/*角の丸み*/
+    margin-left: 10px;
+}
+.category-box h4 {
+	text-align: center;
+}
+.category-body {
+	padding-top: 10px;
+	text-align: center;
+	color: #6091d3;/*文字色*/
+}
+.category-botan {
+	text-align: center;
+	padding-bottom: 30px;
 }
