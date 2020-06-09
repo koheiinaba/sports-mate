@@ -34,7 +34,7 @@ class ClubsController < ApplicationController
     @club.user_id = current_user.id
     if @club.save
      redirect_to club_path(@club.id)
-     flash[:notice] = "商品を追加しました"
+     flash[:notice] = "クラブを追加しました"
     else
       render :new
     end
@@ -48,7 +48,7 @@ class ClubsController < ApplicationController
       flash[:notice] = "クラブ編集しました"
       redirect_to club_path(@club.id)
     else
-      render("clubs/edit")
+      render :edit
     end
   end
 

@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post.id)
     else
-      render("posts/index")
+      render :index
     end
   end
 
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
       flash[:notice] = "編集しました"
       redirect_to post_path(@post.id)
     else
-      render("posts/edit")
+      render :edit
     end
   end
 
