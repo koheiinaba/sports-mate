@@ -24,7 +24,7 @@
       <% if user_signed_in? %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <p style="color:#330000; padding-left:180px;"><strong>ようこそ、<%= current_user.name %>さん!</strong></p>
+            <p style="color:#330000; padding-left:180px;"><strong>ようこそ、<%= current_user.name %>さん</strong></p>
 
             <li class=""><%= link_to "sports-mate", root_path,class: "glyphicon glyphicon-home home" %></li>
             <li class=""><%= link_to 'クラブ一覧', clubs_path,class: "glyphicon glyphicon-book books" %></li>
