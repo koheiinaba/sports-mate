@@ -1,7 +1,7 @@
 <%= form_with(model: [posts,comment], remote: true, url: post_comments_path(posts), method: :post) do |f| %> 
 
   <div class="field">
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment, :size=>"30x5" %>
   </div>
   <br>
   <div class="actions">
