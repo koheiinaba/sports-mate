@@ -61,12 +61,9 @@
       <% end %>
     </tbody>
   </table>
-<div class="row">
   <% if user_signed_in? %>
-  <div class="col-xs-9"></div>
-  <%= link_to "クラブ新規登録", new_club_path, class: "btn btn-success"  %>
+    <a href="/clubs/new" class="btn-square-soft">クラブ新規登録</a>
   <% end %>
-</div>
 </div>
 
 
