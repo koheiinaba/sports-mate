@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
 
+
   describe 'アソシエーションのテスト' do
     context 'clubモデルとの関係' do
       it '1:Nとなっている' do
