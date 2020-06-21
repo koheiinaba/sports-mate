@@ -73,3 +73,28 @@ body {
 }
 // 'Hannotate SC'
 /*application.scss適用　　ヘッダーandフッター ここまで*/
+
+/*検索フォーム*/
+.search {
+	height: 200px;
+	padding-top: 50px;
+	width: 80%;
+}
+.search-form {
+    border-radius: 5px 0 0 5px;
+    float: left;
+}
+.select-box {
+	float: left;
+    outline: 0;/*クリック時の青い枠線消す*/
+    border-radius: 2px 0 0 2px;/*検索ボックスの角を丸める*/
+}
+/*検索ボタン*/
+.search-btn {
+	float: left;
+    border-radius: 0 2px 2px 0;/*検索ボタンの角を丸める*/
+}
+/*検索ボタンマウスオーバー時*/
+.search-btn:hover{
+color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/
+}

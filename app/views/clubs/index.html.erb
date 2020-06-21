@@ -1,11 +1,17 @@
 
 <% if user_signed_in? %>
-　<div class="search-form">
-  　<%= form_tag(search_path, method: :get) do %>
-    　<%= text_field_tag 'search[content]' %>
-      <%= select_tag 'search[model]', options_for_select({ "ユーザ名" => "ユーザ名", "クラブ名" => "クラブ名", "投稿タイトル" => "投稿タイトル" }) %>
-      <%= select_tag 'search[how]', options_for_select({ "完全一致" => "match", "部分一致" => "partical"  }) %>
-      <%= submit_tag '検索', class: "btn btn-primary" %>
+  <div class="search">
+    <%= form_tag(search_path, method: :get) do %>
+      <div class="search-form">
+        <%= text_field_tag 'search[content]' %>
+      </div>
+      <div class="select-box">
+        <%= select_tag 'search[model]', options_for_select({ "ユーザ名" => "ユーザ名", "クラブ名" => "クラブ名", "投稿タイトル" => "投稿タイトル" }) %>
+         <%= select_tag 'search[how]', options_for_select({ "完全一致" => "match", "部分一致" => "partical"  }) %>
+      </div>
+      <div class="search-btn">
+        <%= submit_tag '検索' %>
+      </div>
     <% end %>
   </div>
 <% end %>
@@ -38,8 +44,7 @@
       <thead>
       <tr>
         <th></th>
-        <th>クラブ名</th>
-        <th>ジャンル</th>
+        <th>クラブ<br>ジャンル</th>
         <th>クラブ説明</th>
         <th>活動場所</th>
       </tr>
@@ -52,8 +57,7 @@
           <%= attachment_image_tag club, :club_image, size:'50x50', format: 'jpeg', fallback: "no_image.jpg" %>
           <% end %>
         </td>
-        <td><%= link_to club.name, club_path(club.id) %></td>
-        <td><%= club.category.name %></td>
+        <td><%= link_to club.name, club_path(club.id) %><br><%= club.category.name %></td>
         <td><%= club.introduction %></td>
         <td><%= club.place %></td>
         <td><%= link_to "クラブ詳細を見る", club_path(club.id), class: "btn btn-primary"  %></td>
@@ -65,5 +69,4 @@
     <a href="/clubs/new" class="btn-square-soft">クラブ新規登録</a>
   <% end %>
 </div>
-
 
