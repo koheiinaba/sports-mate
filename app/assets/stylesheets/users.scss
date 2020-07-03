@@ -2,3 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.user-title {
+	text-align: center;
+	color: #f50404;
+	margin-left: 20px;
+}
+
+.user-profile {
+	padding: 4em 3em;
+    margin: 2em 0;
+    font-weight: bold;
+    background: #FFF;
+    border: solid 2px #f50404;/*線*/
+    border-radius: 20px;/*角の丸み*/
+    margin-left: 20px;
+}
+
+.user-btn {
+	padding-top: 20px;
+	text-align: center;
+}
+
+.club-title {
+	text-align: center;
+	color: #0459f5;
+	margin-left: 20px;
+}
+
+.club-profile {
+	padding: 4em 3em;
+    margin: 2em 0;
+    font-weight: bold;
+    background: #FFF;
+    border: solid 2px #0459f5;/*線*/
+    border-radius: 20px;/*角の丸み*/
+    margin-left: 20px;
+}
+
+.post-title {
+	text-align: center;
+	color: #34f504;
+	margin-left: 20px;
+}
+
+.post-profile {
+	padding: 4em 3em;
+    margin: 2em 0;
+    font-weight: bold;
+    background: #FFF;
+    border: solid 2px #34f504;/*線*/
+    border-radius: 20px;/*角の丸み*/
+    margin-left: 20px;
+}
