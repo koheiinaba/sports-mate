@@ -76,21 +76,22 @@ body {
 
 /*検索フォーム*/
 .search-form {
-  position: relative;
-  left: 30%;
-  height: 100px;
-  padding-top: 50px;
-  width: 500px;
+    position: relative;
+    left: 30%;
+    height: 100px;
+    padding-top: 50px;
+    width: 500px;
 }
-.search-form form {
-  padding-left: 10px;
-  border-radius: 5px 0 0 5px;
-  float: left;
+.search[content] {
+	height: 50px;
+    padding-left: 10px;
+    border-radius: 5px 0 0 5px;
+    float: left;
 }
 
 .search-form select {
-  float: left;
-  padding-left: 10px;
-  outline: 0;/*クリック時の青い枠線消す*/
-  border-radius: 2px 0 0 2px;/*検索ボックスの角を丸める*/
+    float: left;
+    padding-left: 10px;
+    outline: 0;/*クリック時の青い枠線消す*/
+    border-radius: 2px 0 0 2px;/*検索ボックスの角を丸める*/
 }
